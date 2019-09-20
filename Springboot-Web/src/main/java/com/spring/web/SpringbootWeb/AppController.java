@@ -12,14 +12,14 @@ public class AppController {
 	@RequestMapping("/test")
 	public String test() {
 		System.out.println("AppController->test()");
-		return "test.jsp";
+		return "test";
 	}
 	
 	@RequestMapping("/list_contact")
 	public String listContact(Model model) {
 		ContactBusiness business = new ContactBusiness();
 		List<Contact> contactList = business.getContactList();
-		model.addAttribute("contact", contactList);
+		model.addAttribute("contacts", contactList);
 		return "contact";
 	}
 }
